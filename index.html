@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniGreX - Secure Infrastructure for Press Freedom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #ffffff;
+            color: #111827;
+        }
+        .green-accent {
+            color: #10b981;
+        }
+        .bg-green-accent {
+            background-color: #10b981;
+        }
+        .border-green-accent {
+            border-color: #10b981;
+        }
+        .hover\:bg-green-accent:hover {
+            background-color: #10b981;
+        }
+        .hover\:text-white:hover {
+            color: #ffffff;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #10b981, transparent);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="logo">M</div>
+                <span class="text-xl font-bold">Mini<span class="green-accent">GreX</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#mission" class="font-medium hover:text-green-600 transition">Mission</a>
+                <a href="#about" class="font-medium hover:text-green-600 transition">About</a>
+                <a href="#offer" class="font-medium hover:text-green-600 transition">What We Offer</a>
+                <a href="#join" class="font-medium hover:text-green-600 transition">Join Us</a>
+                <a href="#legal" class="font-medium hover:text-green-600 transition">Legal</a>
+            </nav>
+            <button class="md:hidden">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 px-4">
+            <div class="container mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Protecting <span class="green-accent">Truth</span> in<br>
+                    Challenging Environments
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    Secure infrastructure for journalists and security professionals worldwide
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#join" class="px-8 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition">
+                        Join Our Mission
+                    </a>
+                    <a href="#offer" class="px-8 py-3 border-2 border-green-600 text-green-600 font-medium rounded-md hover:bg-green-50 transition">
+                        Our Offerings
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider my-16"></div>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-16 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Our <span class="green-accent">Mission</span></h2>
+                    <p class="text-xl text-gray-600">
+                        To support journalists, whistleblowers, and security developers with secure and reliable web-infrastructure, ensuring that free and unbiased information continues to thrive.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 border border-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-green-600 mb-4">
+                            <i data-feather="shield" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Security First</h3>
+                        <p class="text-gray-600">Tools designed for high-risk environments with privacy as the core principle.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-green-600 mb-4">
+                            <i data-feather="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Community Driven</h3>
+                        <p class="text-gray-600">A collective of developers and specialists working together to enhance security.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-green-600 mb-4">
+                            <i data-feather="globe" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Global Impact</h3>
+                        <p class="text-gray-600">Supporting press freedom and transparency worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider my-16"></div>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 px-4 bg-gray-50">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Who <span class="green-accent">We Are</span></h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div data-aos="fade-right">
+                        <p class="text-lg text-gray-600 mb-6">
+                            MiniGreX is a collective of developers, security specialists, and advocates for press freedom. Together, we design and maintain tools that prioritize security, privacy, and ease of use.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            Access to this organization is restricted to vetted individuals who align with our mission. Applications are reviewed to ensure our resources are used ethically and responsibly.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200" data-aos="fade-left">
+                        <div class="flex items-center mb-6">
+                            <div class="mr-4 text-green-600">
+                                <i data-feather="alert-triangle" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">We're Looking For</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Beta Testers with Security Skills to help improve our tools and infrastructure.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Secure Contact: MiniGreX [at] proton.me
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider my-16"></div>
+
+        <!-- Offer Section -->
+        <section id="offer" class="py-16 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">What We <span class="green-accent">Offer</span></h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up">
+                        <div class="mr-6 text-green-600">
+                            <i data-feather="lock" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Secure Infrastructure</h3>
+                            <p class="text-gray-600">Tools and frameworks designed for high-risk environments with multiple layers of protection.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mr-6 text-green-600">
+                            <i data-feather="git-merge" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Collaborative Development</h3>
+                            <p class="text-gray-600">A community-driven approach to enhance security features and share knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mr-6 text-green-600">
+                            <i data-feather="book-open" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Expertise Sharing</h3>
+                            <p class="text-gray-600">Resources and guidance for those working at the intersection of journalism and security.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider my-16"></div>
+
+        <!-- Join Section -->
+        <section id="join" class="py-16 px-4 bg-gray-50">
+            <div class="container mx-auto max-w-2xl text-center">
+                <div data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-6">Join Our <span class="green-accent">Mission</span></h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        If you share our vision and are interested in contributing to this initiative, we welcome your application.
+                    </p>
+                    <a href="#" class="px-8 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition inline-block">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider my-16"></div>
+
+        <!-- Legal Section -->
+        <section id="legal" class="py-16 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Legal <span class="green-accent">Notice</span></h2>
+                </div>
+                <div class="prose prose-green max-w-none" data-aos="fade-up">
+                    <h3 class="text-xl font-bold mb-2">Usage Policies</h3>
+                    <p class="text-gray-600 mb-4">
+                        MiniGreX is built to support press freedom and the protection of fundamental rights. Misuse of this software for purposes contrary to these principles is strictly prohibited.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2 mt-6">Allowed Use</h3>
+                    <ul class="text-gray-600 mb-4 list-disc pl-5">
+                        <li>Development of tools that enhance security and protect freedom of expression</li>
+                        <li>Usage by journalists, security professionals, and aligned developers</li>
+                    </ul>
+                    <h3 class="text-xl font-bold mb-2 mt-6">Prohibited Use</h3>
+                    <ul class="text-gray-600 mb-4 list-disc pl-5">
+                        <li>Illegal surveillance or suppression of information</li>
+                        <li>Violation of human rights or actions undermining press freedom</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-8">
+                        By using or contributing to MiniGreX, you acknowledge and agree to these terms.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="logo">M</div>
+                        <span class="text-xl font-bold">Mini<span class="text-green-400">GreX</span></span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Secure infrastructure for press freedom</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="mail"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 MiniGreX Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        feather.replace();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden';
+        mobileMenu.innerHTML = `
+            <button class="absolute top-4 right-4 p-2">
+                <i data-feather="x" class="w-6 h-6"></i>
+            </button>
+            <nav class="flex flex-col items-center space-y-8">
+                <a href="#mission" class="text-2xl font-medium hover:text-green-600 transition">Mission</a>
+                <a href="#about" class="text-2xl font-medium hover:text-green-600 transition">About</a>
+                <a href="#offer" class="text-2xl font-medium hover:text-green-600 transition">What We Offer</a>
+                <a href="#join" class="text-2xl font-medium hover:text-green-600 transition">Join Us</a>
+                <a href="#legal" class="text-2xl font-medium hover:text-green-600 transition">Legal</a>
+            </nav>
+        `;
+        document.body.appendChild(mobileMenu);
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            feather.replace();
+            const closeButton = mobileMenu.querySelector('button');
+            closeButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
