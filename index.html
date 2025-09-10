@@ -53,7 +53,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 py-4 max-w-6xl flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="logo">M</div>
                 <span class="text-2xl font-bold">Mini<span class="green-accent">GreX</span></span>
@@ -72,8 +72,8 @@
     </header>
 
     <main class="flex-grow">
-        <section class="py-20 px-4 flex items-center justify-center text-center">
-            <div class="container mx-auto" data-aos="fade-up">
+        <section class="py-20 px-4 flex items-center justify-center text-center bg-white">
+            <div class="container mx-auto max-w-6xl" data-aos="fade-up">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                     Protecting <span class="green-accent">Truth</span> in<br>
                     Challenging Environments
@@ -90,30 +90,30 @@
 
         <div class="section-divider my-16"></div>
 
-        <section id="mission" class="py-16 px-4">
-            <div class="container mx-auto max-w-4xl">
+        <section id="mission" class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-bold mb-4">Our <span class="green-accent">Mission</span></h2>
-                    <p class="text-xl text-gray-600">
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                         To support journalists, whistleblowers, and security developers with a secure and reliable web-infrastructure, ensuring that free and unbiased information continues to thrive.
                     </p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-green-accent mb-4">
                             <i data-feather="shield" class="w-10 h-10"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Security First</h3>
                         <p class="text-gray-600">Tools designed for high-risk environments with privacy as the core principle.</p>
                     </div>
-                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up" data-aos-delay="200">
                         <div class="text-green-accent mb-4">
                             <i data-feather="users" class="w-10 h-10"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Community Driven</h3>
                         <p class="text-gray-600">A collective of developers and specialists working together to enhance security.</p>
                     </div>
-                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-green-accent mb-4">
                             <i data-feather="globe" class="w-10 h-10"></i>
                         </div>
@@ -126,8 +126,8 @@
 
         <div class="section-divider my-16"></div>
 
-        <section id="about" class="py-16 px-4 bg-gray-100">
-            <div class="container mx-auto max-w-4xl">
+        <section id="about" class="py-16 px-4 bg-white">
+            <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-bold mb-4">Who <span class="green-accent">We Are</span></h2>
                 </div>
@@ -137,10 +137,10 @@
                             MiniGreX is a collective of developers, security specialists, and advocates for press freedom. Together, we design and maintain tools that prioritize security, privacy, and ease of use.
                         </p>
                         <p class="text-lg text-gray-700">
-                            Access to this organization is restricted to vetted individuals who align with our mission. Applications are reviewed to ensure our resources are used ethically and responsibly.
+                            Access to this organization is restricted to vetted individuals who align with our mission. Applications are reviewed on a case-by-case basis to ensure that our resources are used ethically and responsibly.
                         </p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center" data-aos="fade-left">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center" data-aos="fade-left">
                         <div class="flex items-center mb-6">
                             <div class="mr-4 text-green-accent">
                                 <i data-feather="alert-triangle" class="w-10 h-10"></i>
@@ -160,38 +160,32 @@
 
         <div class="section-divider my-16"></div>
 
-        <section id="offer" class="py-16 px-4">
-            <div class="container mx-auto max-w-4xl">
+        <section id="offer" class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-bold mb-4">What We <span class="green-accent">Offer</span></h2>
                 </div>
-                <div class="space-y-8">
-                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up">
-                        <div class="mr-6 text-green-accent">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up">
+                        <div class="text-green-accent mb-4">
                             <i data-feather="lock" class="w-10 h-10"></i>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Secure Infrastructure</h3>
-                            <p class="text-gray-600">Tools and frameworks designed for high-risk environments with multiple layers of protection.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Secure Infrastructure</h3>
+                        <p class="text-gray-600">Tools and frameworks designed for high-risk environments with multiple layers of protection.</p>
                     </div>
-                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up" data-aos-delay="100">
-                        <div class="mr-6 text-green-accent">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-green-accent mb-4">
                             <i data-feather="git-merge" class="w-10 h-10"></i>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Collaborative Development</h3>
-                            <p class="text-gray-600">A community-driven approach to enhance security features and share knowledge.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Collaborative Development</h3>
+                        <p class="text-gray-600">A community-driven approach to enhance security features and share knowledge.</p>
                     </div>
-                    <div class="p-6 border border-gray-200 rounded-lg flex items-start" data-aos="fade-up" data-aos-delay="200">
-                        <div class="mr-6 text-green-accent">
+                    <div class="p-6 border border-gray-200 rounded-lg flex flex-col items-center text-center bg-white" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-green-accent mb-4">
                             <i data-feather="book-open" class="w-10 h-10"></i>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Expertise Sharing</h3>
-                            <p class="text-gray-600">Resources and guidance for those working at the intersection of journalism and security.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Expertise Sharing</h3>
+                        <p class="text-gray-600">Resources and guidance for those working at the intersection of journalism and security.</p>
                     </div>
                 </div>
             </div>
@@ -199,11 +193,11 @@
 
         <div class="section-divider my-16"></div>
 
-        <section id="join" class="py-16 px-4 bg-gray-100">
-            <div class="container mx-auto max-w-2xl text-center">
+        <section id="join" class="py-16 px-4 bg-white">
+            <div class="container mx-auto max-w-6xl text-center">
                 <div data-aos="fade-up">
                     <h2 class="text-4xl font-bold mb-6">Join Our <span class="green-accent">Mission</span></h2>
-                    <p class="text-xl text-gray-600 mb-8">
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                         If you share our vision and are interested in contributing to this initiative, we welcome your application.
                     </p>
                     <a href="#" class="btn btn-primary">Apply Now</a>
@@ -213,28 +207,28 @@
 
         <div class="section-divider my-16"></div>
 
-        <section id="legal" class="py-16 px-4">
-            <div class="container mx-auto max-w-4xl">
+        <section id="legal" class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-bold mb-4">Legal <span class="green-accent">Notice</span></h2>
                 </div>
-                <div class="prose prose-green max-w-none" data-aos="fade-up">
+                <div class="prose max-w-none prose-lg mx-auto" data-aos="fade-up">
                     <h3 class="text-2xl font-bold mb-2">Usage Policies</h3>
                     <p class="text-gray-600 mb-4">
                         MiniGreX is built to support press freedom and the protection of fundamental rights. Misuse of this software for purposes contrary to these principles is strictly prohibited.
                     </p>
                     <h3 class="text-2xl font-bold mb-2 mt-6">Allowed Use</h3>
                     <ul class="text-gray-600 mb-4 list-disc pl-5">
-                        <li>Development of tools that enhance security and protect freedom of expression.</li>
-                        <li>Usage by journalists, security professionals, and aligned developers.</li>
+                        <li>Development of tools and systems that enhance security, protect freedom of expression, and support journalistic work.</li>
+                        <li>Usage by journalists, security professionals, and developers aligned with the project’s mission.</li>
                     </ul>
                     <h3 class="text-2xl font-bold mb-2 mt-6">Prohibited Use</h3>
                     <ul class="text-gray-600 mb-4 list-disc pl-5">
-                        <li>Illegal surveillance or suppression of information.</li>
-                        <li>Violation of human rights or actions undermining press freedom.</li>
+                        <li>Exploitation of the software for illegal surveillance, suppression of information, or harm to individuals.</li>
+                        <li>Violation of human rights or actions that undermine press freedom.</li>
                     </ul>
                     <p class="text-sm text-gray-500 mt-8">
-                        By using or contributing to MiniGreX, you acknowledge and agree to these terms.
+                        For more detailed information and the full legal disclaimer, please visit our official GitHub organization page.
                     </p>
                 </div>
             </div>
@@ -242,7 +236,7 @@
     </main>
 
     <footer class="bg-gray-900 text-white py-12 px-4">
-        <div class="container mx-auto">
+        <div class="container mx-auto max-w-6xl">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center space-x-2">
@@ -252,7 +246,7 @@
                     <p class="text-gray-400 mt-2">Secure infrastructure for press freedom</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://github.com/MiniGreX" class="text-gray-400 hover:text-white transition">
                         <i data-feather="github"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition">
