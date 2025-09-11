@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         
@@ -146,39 +146,6 @@
             padding: 10px;
             z-index: 1000;
         }
-
-        .hero-glow {
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-        }
-
-        .cyber-pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 255, 136, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
-        }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #00ff88;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00ff88; }
-        }
     </style>
 </head>
 <body class="bg-gray-900">
@@ -205,7 +172,7 @@
                     <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
                     <a href="#services" class="nav-link text-gray-300 hover:text-white">Services</a>
                     <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
-                    <a href="legal.html" class="nav-link text-gray-300 hover:text-white">Legal</a>
+                    <a href="#legal" class="nav-link text-gray-300 hover:text-white">Legal</a>
                 </nav>
                 
                 <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-300 hover:text-white">
@@ -217,35 +184,286 @@
         <main>
             <section class="min-h-screen flex items-center justify-center px-4 py-20">
                 <div class="container mx-auto max-w-6xl text-center" data-aos="fade-up">
-                    <div class="relative inline-block mb-12">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg blur opacity-75"></div>
-                        <div class="relative px-8 py-6 bg-gray-900 rounded-lg">
-                            <h1 class="text-4xl md:text-6xl font-bold leading-tight hero-glow">
-                                <span class="text-white">Secure</span> <span class="cyber-green">Infrastructure</span><br>
-                                <span class="text-white">for</span> <span class="cyber-green">Press Freedom</span>
-                            </h1>
-                        </div>
-                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span class="text-white">Secure</span> <span class="cyber-green">Infrastructure</span><br>
+                        <span class="text-white">for</span> <span class="cyber-green">Press Freedom</span>
+                    </h1>
                     
                     <div class="terminal max-w-3xl mx-auto my-10 text-left" data-aos="fade-up" data-aos-delay="200">
                         <div class="terminal-content">
                             <p>> Initializing secure connection...</p>
                             <p>> Establishing encrypted channel...</p>
                             <p class="flex items-center">> Authentication complete <span class="cyber-green ml-2">✓</span></p>
-                            <p class="typewriter">> Welcome to MiniGreX Network</p>
+                            <p>> Welcome to MiniGreX Network<span class="blink">_</span></p>
                         </div>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="400">
-                        <a href="request-access.html" class="px-8 py-3 rounded-md cyber-btn cyber-pulse">Request Access</a>
+                        <a href="#contact" class="px-8 py-3 rounded-md cyber-btn">Request Access</a>
                         <a href="#services" class="px-8 py-3 rounded-md cyber-btn-outline">Our Services</a>
                     </div>
                 </div>
             </section>
 
-            <!-- Rest of the content remains the same as before -->
-            <!-- ... -->
+            <section id="mission" class="py-20 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="text-4xl font-bold mb-4 text-white">Our <span class="cyber-green">Mission</span></h2>
+                        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                            To provide journalists and security professionals with cutting-edge tools to protect sensitive information and communications.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-cyan-400 mb-4">
+                                <i data-feather="shield" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">End-to-End Encryption</h3>
+                            <p class="text-gray-400">
+                                Military-grade encryption protocols to secure your communications and data transfers.
+                            </p>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-green-400 mb-4">
+                                <i data-feather="eye-off" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Anonymity Tools</h3>
+                            <p class="text-gray-400">
+                                Advanced obfuscation techniques to protect your identity and location.
+                            </p>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-purple-400 mb-4">
+                                <i data-feather="cloud" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Secure Hosting</h3>
+                            <p class="text-gray-400">
+                                Distributed, resilient infrastructure designed to withstand attacks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <section id="about" class="py-20 px-4 bg-cyber-dark bg-opacity-70">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-right">
+                            <h2 class="text-4xl font-bold mb-6 text-white">About <span class="cyber-green">MiniGreX</span></h2>
+                            <p class="text-lg text-gray-400 mb-6">
+                                MiniGreX is a collective of cybersecurity experts, developers, and journalists working together to create secure communication channels for high-risk environments.
+                            </p>
+                            <p class="text-lg text-gray-400 mb-6">
+                                Our team operates under strict security protocols to ensure the integrity of our systems and the safety of our users.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="px-4 py-2 bg-gray-800 rounded-md text-sm font-mono text-green-400">AES-256</div>
+                                <div class="px-4 py-2 bg-gray-800 rounded-md text-sm font-mono text-green-400">TOR</div>
+                                <div class="px-4 py-2 bg-gray-800 rounded-md text-sm font-mono text-green-400">PGP</div>
+                                <div class="px-4 py-2 bg-gray-800 rounded-md text-sm font-mono text-green-400">OPSEC</div>
+                            </div>
+                        </div>
+                        
+                        <div data-aos="fade-left" class="relative">
+                            <div class="cyber-card p-8 rounded-lg">
+                                <h3 class="text-2xl font-bold mb-4 text-white">Security Advisory</h3>
+                                <div class="flex items-start mb-4">
+                                    <div class="text-red-400 mr-3">
+                                        <i data-feather="alert-triangle"></i>
+                                    </div>
+                                    <p class="text-gray-400">
+                                        Always verify PGP signatures before installing any software.
+                                    </p>
+                                </div>
+                                <div class="flex items-start mb-4">
+                                    <div class="text-yellow-400 mr-3">
+                                        <i data-feather="alert-circle"></i>
+                                    </div>
+                                    <p class="text-gray-400">
+                                        Use secure channels for all sensitive communications.
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-blue-400 mr-3">
+                                        <i data-feather="info"></i>
+                                    </div>
+                                    <p class="text-gray-400">
+                                        Regular security audits are conducted on all our systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="py-20 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="text-4xl font-bold mb-4 text-white">Our <span class="cyber-green">Services</span></h2>
+                        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                            Specialized solutions for high-risk communication and data protection.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up">
+                            <div class="text-cyan-400 mb-4">
+                                <i data-feather="mail" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Secure Email</h3>
+                            <p class="text-gray-400 mb-4">
+                                Encrypted email services with self-destructing messages and advanced authentication.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">SMTP/TLS • PGP • S/MIME</div>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-green-400 mb-4">
+                                <i data-feather="message-square" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Secure Messaging</h3>
+                            <p class="text-gray-400 mb-4">
+                                End-to-end encrypted chat with perfect forward secrecy and deniability.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">OTR • Signal Protocol • MLS</div>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-purple-400 mb-4">
+                                <i data-feather="upload-cloud" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Secure File Transfer</h3>
+                            <p class="text-gray-400 mb-4">
+                                Encrypted file sharing with access controls and automatic expiration.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">SFTP • WebDAV • IPFS</div>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up">
+                            <div class="text-yellow-400 mb-4">
+                                <i data-feather="monitor" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Secure Hosting</h3>
+                            <p class="text-gray-400 mb-4">
+                                Bulletproof hosting with DDoS protection and traffic obfuscation.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">Onion • I2P • ZeroNet</div>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-red-400 mb-4">
+                                <i data-feather="key" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Identity Protection</h3>
+                            <p class="text-gray-400 mb-4">
+                                Tools for creating and managing secure anonymous identities.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">FIDO2 • U2F • WebAuthn</div>
+                        </div>
+                        
+                        <div class="cyber-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-blue-400 mb-4">
+                                <i data-feather="tool" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">Security Training</h3>
+                            <p class="text-gray-400 mb-4">
+                                Operational security training for journalists and activists.
+                            </p>
+                            <div class="text-xs font-mono text-gray-500">OPSEC • INFOSEC • COMSEC</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-20 px-4 bg-cyber-dark bg-opacity-70">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="text-4xl font-bold mb-4 text-white">Secure <span class="cyber-green">Contact</span></h2>
+                        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                            Use secure channels for all communications.
+                        </p>
+                    </div>
+                    
+                    <div class="cyber-card p-8 rounded-lg" data-aos="fade-up">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-6 text-white">PGP Key</h3>
+                                <div class="bg-gray-900 p-4 rounded-md font-mono text-xs text-gray-400 overflow-x-auto">
+                                    <pre>-----BEGIN PGP PUBLIC KEY BLOCK-----
+...
+[Your PGP Key Here]
+...
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-2xl font-bold mb-6 text-white">Contact Methods</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="text-green-400 mr-3">
+                                            <i data-feather="mail"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm text-gray-400">Secure Email</div>
+                                            <div class="font-mono text-white">minigrex@proton.me</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="text-blue-400 mr-3">
+                                            <i data-feather="message-square"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm text-gray-400">Signal</div>
+                                            <div class="font-mono text-white">+X XXX XXX XXXX</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="text-purple-400 mr-3">
+                                            <i data-feather="github"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm text-gray-400">GitHub</div>
+                                            <div class="font-mono text-white">github.com/MiniGreX</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="legal" class="py-20 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="cyber-card p-8 rounded-lg" data-aos="fade-up">
+                        <h2 class="text-4xl font-bold mb-6 text-white">Legal <span class="cyber-green">Notice</span></h2>
+                        
+                        <div class="prose prose-invert max-w-none">
+                            <h3 class="text-2xl font-bold mb-4 text-white">Usage Policy</h3>
+                            <p class="text-gray-400 mb-4">
+                                MiniGreX services are provided exclusively for lawful purposes. Any misuse of these services for illegal activities is strictly prohibited.
+                            </p>
+                            
+                            <h3 class="text-2xl font-bold mb-4 mt-8 text-white">Disclaimer</h3>
+                            <p class="text-gray-400 mb-4">
+                                While we implement strong security measures, no system can be 100% secure. Users should always practice good operational security.
+                            </p>
+                            
+                            <h3 class="text-2xl font-bold mb-4 mt-8 text-white">Responsible Disclosure</h3>
+                            <p class="text-gray-400">
+                                Security researchers can report vulnerabilities to our security team through secure channels.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="bg-gray-900 border-t border-gray-800 py-12 px-4">
@@ -275,7 +493,7 @@
                 </div>
                 
                 <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                    <p>© 2025 MiniGreX. All rights reserved. <a href="legal.html" class="text-green-400 hover:underline">Legal Notice</a></p>
+                    <p>© 2025 MiniGreX. All rights reserved.</p>
                 </div>
             </div>
         </footer>
@@ -286,7 +504,7 @@
         document.getElementById('main-content').classList.remove('hidden_main');
         
         // Initialize Vanta.js background
-        VANTA.GLOBE({
+        VANTA.NET({
             el: "#vanta-bg",
             mouseControls: true,
             touchControls: true,
@@ -297,7 +515,9 @@
             scaleMobile: 1.00,
             color: 0x00ff88,
             backgroundColor: 0x0a192f,
-            size: 0.8
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 17.00
         });
         
         // Initialize AOS animations
