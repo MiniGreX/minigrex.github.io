@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniGreX - Secure Infrastructure for Press Freedom</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* CRITICAL CSS & VARIABLES */
+        :root {
+            --primary: #F5F5F5;
+            --secondary: #FFFFFF;
+            --accent: #2A2E35;
+            --highlight: #3CA66A;
+            --lightAccent: #4FB878;
+            --darkGreen: #2C8053;
+            --lightGrey: #E5E7EB;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent);
+            background-color: var(--primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container-content {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HELPER CLASSES (Inline Tailwind Replacement) */
+        .py-20 { padding: 5rem 0; }
+        .py-16 { padding: 4rem 0; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-center { text-align: center; }
+        .font-bold { font-weight: 700; }
+        .flex { display: flex; }
+        .grid { display: grid; gap: 2rem; }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--secondary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .x-highlight { color: var(--highlight); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--accent); transition: 0.3s; }
+        .nav-links a:hover { color: var(--highlight); }
+        
+        .menu-btn { display: none; background: none; border: none; cursor: pointer; color: var(--accent); }
+
+        /* HERO & ILLUSTRATION */
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--highlight) 0%, var(--darkGreen) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .illustration-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Square */
+            background-color: #f0f4f8;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .server-core {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(80px, 20%, 150px);
+            height: clamp(80px, 20%, 150px);
+            border-radius: 50%;
+            background-color: var(--darkGreen);
+            box-shadow: 0 0 20px rgba(44, 128, 83, 0.5);
+            z-index: 2;
+        }
+
+        .data-block {
+            position: absolute;
+            width: 30px; height: 30px;
+            background-color: var(--highlight);
+            border-radius: 8px;
+            animation: move-data 10s infinite linear;
+        }
+
+        /* Keyframes & Positions (Dein Original) */
+        @keyframes move-data {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            25% { transform: translate(100px, -50px) scale(0.8); opacity: 0.8; }
+            50% { transform: translate(0, -100px) scale(0.6); opacity: 0.6; }
+            75% { transform: translate(-100px, -50px) scale(0.8); opacity: 0.8; }
+            100% { transform: translate(0, 0) scale(1); opacity: 1; }
+        }
+
+        /* CARDS */
+        .card-style {
+            background-color: var(--secondary);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .card-style:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+        .card-style i { color: var(--highlight); margin-bottom: 1rem; width: 40px; height: 40px; }
+
+        /* LEGAL SECTION */
+        .prose h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+        .prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1rem; opacity: 0.9; }
+
+        /* FOOTER */
+        footer { background: var(--secondary); padding: 4rem 0; border-top: 1px solid var(--lightGrey); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-grid h4 { margin-bottom: 1rem; }
+        .footer-grid ul { list-style: none; }
+        .footer-grid a { text-decoration: none; color: var(--accent); opacity: 0.8; font-size: 0.9rem; }
+
+        /* RESPONSIVE FIX (Deine "Sperre" fixen) */
+        @media (max-width: 768px) {
+            .container-content { width: 92%; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; } /* Mobile Menu müsste hier ergänzt werden */
+            .menu-btn { display: block; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .illustration-container { max-width: 300px; margin: 0 auto; } /* Fix: Nicht hidden, sondern kleiner */
+        }
+
+        /* NOSCRIPT */
+        .noscript-alert {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #FFFFFF; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <noscript>
+        <div class="noscript-alert">
+            <h2 class="font-bold">JavaScript Disabled</h2>
+            <p>This website requires JavaScript to function properly.</p>
+        </div>
+    </noscript>
+
+    <nav>
+        <div class="container-content nav-container">
+            <a href="#" class="logo-text">Mini<span class="x-highlight">GreX</span></a>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#mission">Mission</a>
+                <a href="#services">Services</a>
+                <a href="#legal">Legal</a>
+                <a href="#join">Join Us</a>
+                <a href="https://github.com/MiniGreX" target="_blank"><i data-feather="github"></i></a>
+            </div>
+            <button class="menu-btn"><i data-feather="menu"></i></button>
+        </div>
+    </nav>
+
+    <section id="home" class="py-20">
+        <div class="container-content hero-grid">
+            <div data-aos="fade-right">
+                <h1 style="font-size: 3rem; line-height: 1.2;" class="mb-6">SECURE <span class="gradient-text">INFRASTRUCTURE</span><br><span class="gradient-text">FOR PRESS FREEDOM</span></h1>
+                <p class="mb-8" style="font-size: 1.1rem; opacity: 0.9;">Providing journalists and security professionals with cutting-edge tools to protect sensitive information and communications.</p>
+                <div class="flex" style="gap: 1rem;">
+                    <a href="#join" class="card-style" style="background: var(--highlight); color: white; text-decoration: none; padding: 0.8rem 2rem;">Request Access</a>
+                    <a href="#services" class="card-style" style="border: 1px solid var(--highlight); color: var(--highlight); text-decoration: none; padding: 0.8rem 2rem; box-shadow: none;">Our Services</a>
+                </div>
+            </div>
+            <div class="illustration-container" data-aos="fade-left">
+                <div class="server-core"></div>
+                <div class="data-block" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+                <div class="data-block" style="top: 80%; left: 25%; animation-delay: -2s;"></div>
+                <div class="data-block" style="top: 50%; right: 10%; animation-delay: -4s;"></div>
+                <div class="data-block" style="bottom: 15%; left: 60%; animation-delay: -6s;"></div>
+                <div class="data-block" style="top: 10%; right: 50%; animation-delay: -8s;"></div>
+                <div class="data-block" style="top: 40%; left: 40%; animation-delay: -1s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="py-20" style="background: var(--secondary);">
+        <div class="container-content">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem;" class="mb-4">Mini<span class="x-highlight">GreX</span> Overview</h2>
+                <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Welcome to the **MiniGreX Organization**, a dedicated initiative to empower journalists and security professionals worldwide.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card-style" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="mb-4">Who We Are</h3>
+                    <p>MiniGreX is a collective of developers, security specialists, and advocates for press freedom. Together, we design and maintain tools that prioritize security, privacy, and ease of use.</p>
+                </div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="mb-4">Membership Access</h3>
+                    <p>Access to this organization is restricted to vetted individuals who align with our mission. Applications are reviewed on a case-by-case basis.</p>
+                </div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="mb-4">What We Offer</h3>
+                    <p>We offer secure infrastructure, collaborative development, and expertise sharing for those working at the intersection of journalism and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="py-16">
+        <div class="container-content">
+            <h2 class="text-center mb-8 font-bold" style="font-size: 2rem;">OUR <span class="gradient-text">MISSION</span></h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card-style" data-aos="fade-up">
+                    <i data-feather="shield"></i>
+                    <h3 class="mb-4">End-to-End Encryption</h3>
+                    <p>Military-grade encryption protocols to secure your communications and data transfers.</p>
+                </div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="100">
+                    <i data-feather="eye-off"></i>
+                    <h3 class="mb-4">Anonymity Tools</h3>
+                    <p>Advanced obfuscation techniques to protect your identity and location.</p>
+                </div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="200">
+                    <i data-feather="cloud"></i>
+                    <h3 class="mb-4">Secure Hosting</h3>
+                    <p>Distributed, resilient infrastructure designed to withstand attacks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20" style="background: var(--secondary);">
+        <div class="container-content">
+            <div class="hero-grid">
+                <div data-aos="fade-right" style="text-align: center;">
+                    <img src="minigrex.webp" alt="MiniGreX logo" style="max-width: 100%; height: auto; border-radius: 1rem;">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="mb-6 font-bold" style="font-size: 2rem;">ABOUT <span class="gradient-text">MINIGREX</span></h2>
+                    <p class="mb-4">MiniGreX is a collective of cybersecurity experts, developers, and journalists working together to create secure communication channels for high-risk environments.</p>
+                    <p class="mb-6">Our team operates under strict security protocols to ensure the integrity of our systems and the safety of our users.</p>
+                    <a href="https://github.com/MiniGreX" target="_blank"><i data-feather="github" style="color: var(--accent);"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16">
+        <div class="container-content">
+            <h2 class="text-center mb-8 font-bold" style="font-size: 2rem;">OUR <span class="gradient-text">SERVICES</span></h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="card-style" data-aos="fade-up"><i data-feather="mail"></i><h4>Secure Email</h4><p>Encrypted email services with self-destructing messages.</p></div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="100"><i data-feather="message-square"></i><h4>Secure Messaging</h4><p>End-to-end encrypted chat with deniability.</p></div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="200"><i data-feather="upload-cloud"></i><h4>File Transfer</h4><p>Encrypted sharing with access controls.</p></div>
+                <div class="card-style" data-aos="fade-up"><i data-feather="monitor"></i><h4>Secure Hosting</h4><p>Bulletproof hosting with DDoS protection.</p></div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="100"><i data-feather="key"></i><h4>Identity Protection</h4><p>Tools for anonymous identities.</p></div>
+                <div class="card-style" data-aos="fade-up" data-aos-delay="200"><i data-feather="tool"></i><h4>Security Training</h4><p>Operational training for activists.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legal" class="py-20" style="background: var(--secondary);">
+        <div class="container-content">
+            <div class="card-style prose" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem;" class="mb-6">Legal <span class="gradient-text">Notice</span></h2>
+                <h3>1. Introduction</h3>
+                <p>MiniGreX is a project built to support press freedom, secure communication... (rooted in German law Grundgesetz).</p>
+                <h3>2. Terms of Use</h3>
+                <p><strong>Allowed Use:</strong> Development of tools that protect freedom of expression.</p>
+                <p><strong>Prohibited Use:</strong> Exploitation for illegal surveillance or harm.</p>
+                <h3>3. Disclaimer</h3>
+                <p>MiniGreX and its contributors are not liable for damages resulting from misuse.</p>
+                <h3>5. Jurisdiction</h3>
+                <p>MiniGreX operates under the jurisdiction of the Federal Republic of Germany (Grundgesetz Art. 5 & 10).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="py-20 text-center">
+        <div class="container-content" data-aos="zoom-in">
+            <h2 style="font-size: 2.5rem;" class="mb-6">WE ARE <span class="gradient-text">LOOKING FOR</span></h2>
+            <p class="mb-8" style="font-size: 1.2rem;">Beta Testers with Security Skills. Join our mission.</p>
+            <a href="mailto:minigrex@proton.me" class="card-style" style="background: var(--highlight); color: white; text-decoration: none; padding: 1rem 3rem; font-size: 1.2rem; display: inline-block;">Secure Contact</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-content">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-text mb-4">Mini<span class="x-highlight">GreX</span></div>
+                    <p style="font-size: 0.9rem;">Secure infrastructure for press freedom.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#mission">Mission</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#legal">Legal</a></li>
+                        <li><a href="#join">Join Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://github.com/MiniGreX">GitHub</a></li>
+                        <li><a href="mailto:minigrex@proton.me">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--lightGrey); opacity: 0.7;">
+                &copy; 2025 MiniGreX. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 800, once: true });
+        feather.replace();
+    </script>
+</body>
+</html>
