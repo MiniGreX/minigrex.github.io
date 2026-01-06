@@ -10,204 +10,204 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+        --primary: #F5F5F5;
+        --secondary: #FFFFFF;
+        --accent: #2A2E35;
+        --highlight: #3CA66A;
+        --lightAccent: #4FB878;
+        --darkGreen: #2C8053;
+        --lightGrey: #E5E7EB;
+    }
 
-        :root {
-            --primary: #F5F5F5;
-            --secondary: #FFFFFF;
-            --accent: #2A2E35;
-            --highlight: #3CA66A;
-            --lightAccent: #4FB878;
-            --darkGreen: #2C8053;
-            --lightGrey: #E5E7EB;
-        }
+    /* GLOBAL FIXES */
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+        overflow-x: hidden; /* Verhindert horizontales Scrollen auf Mobilgeräten */
+        width: 100%;
+    }
 
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--accent);
-            background-color: var(--primary);
-            line-height: 1.6;
-        }
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        color: var(--accent);
+        background-color: var(--primary);
+        line-height: 1.6;
+    }
 
-        .container-content {
-            width: 80%;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
+    .container-content {
+        width: 90%; /* Erhöht auf 90% für bessere Nutzung auf kleinen Screens */
+        margin: 0 auto;
+        max-width: 1200px;
+    }
 
-        /* Nav Styles */
-        nav {
-            background-color: var(--secondary);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
+    /* NAV FIX */
+    nav {
+        background-color: var(--secondary);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 
-        .nav-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-        .x-highlight { color: var(--highlight); }
+    .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+    .x-highlight { color: var(--highlight); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { text-decoration: none; color: var(--accent); transition: 0.3s; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--highlight); }
 
-        .nav-links { display: flex; gap: 1.5rem; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--accent); 
-            transition: 0.3s; 
-            font-size: 0.95rem;
-        }
-        .nav-links a:hover { color: var(--highlight); }
+    /* LAYOUT & TYPO */
+    .py-20 { padding: 5rem 0; }
+    .py-16 { padding: 4rem 0; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .text-center { text-align: center; }
+    .font-bold { font-weight: 700; }
 
-        /* Typography & Layout */
-        .py-20 { padding: 5rem 0; }
-        .py-16 { padding: 4rem 0; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-12 { margin-bottom: 3rem; }
-        .text-center { text-align: center; }
-        .font-bold { font-weight: 700; }
-        .gradient-text {
-            background: linear-gradient(90deg, var(--highlight) 0%, var(--darkGreen) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+    .gradient-text {
+        background: linear-gradient(90deg, var(--highlight) 0%, var(--darkGreen) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 
-        /* Sections */
-        .bg-secondary { background-color: var(--secondary); }
+    /* HERO SECTION FIX */
+    .hero-flex {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        flex-wrap: wrap; /* Erlaubt das Umbrechen auf Tablet */
+    }
 
+    .hero-text { 
+        flex: 1; 
+        min-width: 300px; /* Verhindert, dass der Text zu schmal wird */
+    }
+
+    .hero-image { 
+        flex: 1; 
+        display: flex; 
+        justify-content: center; 
+        min-width: 300px;
+    }
+
+    /* ANIMATION CONTAINER FIX */
+    .illustration-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1 / 1; /* Moderner Ersatz für padding-bottom Hack */
+        background-color: #f0f4f8;
+        border-radius: 1rem;
+    }
+
+    .server-core {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px; height: 120px;
+        border-radius: 50%;
+        background-color: var(--darkGreen);
+        box-shadow: 0 0 20px rgba(44, 128, 83, 0.5);
+    }
+
+    .data-block {
+        position: absolute;
+        width: 20px; height: 20px;
+        background-color: var(--highlight);
+        border-radius: 6px;
+        animation: move-data 10s infinite linear;
+    }
+
+    @keyframes move-data {
+        0% { transform: translate(0, 0) scale(1); opacity: 1; }
+        25% { transform: translate(100px, -50px) scale(0.8); opacity: 0.8; }
+        50% { transform: translate(0, -100px) scale(0.6); opacity: 0.6; }
+        75% { transform: translate(-100px, -50px) scale(0.8); opacity: 0.8; }
+        100% { transform: translate(0, 0) scale(1); opacity: 1; }
+    }
+
+    /* GRID FIX */
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-style {
+        background-color: var(--secondary);
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+    }
+
+    /* BUTTONS */
+    .btn-primary, .btn-outline {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        transition: 0.3s;
+        text-align: center;
+    }
+    .btn-primary { background-color: var(--highlight); color: white; }
+    .btn-outline { border: 1px solid var(--highlight); color: var(--highlight); }
+
+    /* RESPONSIVE MEDIA QUERIES */
+
+    /* TABLET & MOBILE */
+    @media (max-width: 992px) {
         .hero-flex {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
+            flex-direction: column;
+            text-align: center;
         }
-        .hero-text { flex: 1; }
-        .hero-image { flex: 1; display: flex; justify-content: center; }
-
-        /* Animation Background */
-        .illustration-container {
-            position: relative;
+        .hero-text h1 {
+            font-size: 2.2rem !important; /* Kleinerer Font für Tablet/Mobil */
+        }
+        .hero-image {
             width: 100%;
-            max-width: 450px;
-            padding-bottom: 100%;
-            background-color: #f0f4f8;
-            border-radius: 1rem;
+            max-width: 350px;
+            margin: 0 auto;
         }
+    }
 
-        .server-core {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            background-color: var(--darkGreen);
-            box-shadow: 0 0 20px rgba(44, 128, 83, 0.5);
-        }
-
-        .data-block {
-            position: absolute;
-            width: 30px; height: 30px;
-            background-color: var(--highlight);
-            border-radius: 8px;
-            animation: move-data 10s infinite linear;
-        }
-
-        @keyframes move-data {
-            0% { transform: translate(0, 0) scale(1); opacity: 1; }
-            25% { transform: translate(150px, -70px) scale(0.8); opacity: 0.8; }
-            50% { transform: translate(0, -120px) scale(0.6); opacity: 0.6; }
-            75% { transform: translate(-150px, -70px) scale(0.8); opacity: 0.8; }
-            100% { transform: translate(0, 0) scale(1); opacity: 1; }
-        }
-
-        /* Cards & Grids */
+    @media (max-width: 768px) {
+        .nav-links { display: none; } /* Hamburger-Menü müsste hier gebaut werden, falls nötig */
+        .py-20 { padding: 3rem 0; }
         .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr; /* Stapelt Karten auf dem Handy */
         }
-
-        .card-style {
-            background-color: var(--secondary);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .hero-image {
+            display: none; /* Versteckt die Animation auf kleinen Handys für Performance */
         }
-
-        .card-style:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+        .prose h2 {
+            font-size: 1.8rem !important;
         }
+    }
 
-        .btn-primary {
-            background-color: var(--highlight);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .btn-primary:hover { background-color: var(--darkGreen); }
-
-        .btn-outline {
-            border: 1px solid var(--highlight);
-            color: var(--highlight);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .btn-outline:hover { background-color: rgba(60, 166, 106, 0.1); }
-
-        /* Prose / Legal Text */
-        .prose h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
-        .prose h4 { margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--accent); }
-        .prose p { margin-bottom: 1rem; opacity: 0.9; }
-        .prose ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .prose li { margin-bottom: 0.5rem; }
-
-        /* Footer */
-        footer { padding: 4rem 0; border-top: 1px solid var(--lightGrey); }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        .footer-grid h4 { margin-bottom: 1.5rem; }
-        .footer-grid ul { list-style: none; }
-        .footer-grid li { margin-bottom: 0.75rem; }
-        .footer-grid a { text-decoration: none; color: var(--accent); opacity: 0.8; font-size: 0.9rem; }
-        .footer-grid a:hover { color: var(--highlight); opacity: 1; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero-flex { flex-direction: column; text-align: center; }
-            .nav-links { display: none; }
-            .container-content { width: 90%; }
-            .hero-image { display: none; } /* Wie in deinem Code für Mobile */
-        }
-
-        .noscript-alert {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: white; z-index: 1000; display: flex; 
-            flex-direction: column; align-items: center; justify-content: center;
-        }
-    </style>
+    .noscript-alert {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: white; z-index: 1000; display: flex; 
+        flex-direction: column; align-items: center; justify-content: center;
+        text-align: center; padding: 20px;
+    }
+</style>
 </head>
 <body>
 
