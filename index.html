@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Them Copyright by VolkanKücükbudak -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,260 +9,151 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-    
-    :root {
-        --primary: #F5F5F5;
-        --secondary: #FFFFFF;
-        --accent: #2A2E35;
-        --highlight: #3CA66A;
-        --lightAccent: #4FB878;
-        --darkGreen: #2C8053;
-        --lightGrey: #E5E7EB;
-    }
-
-    /* GLOBAL FIXES */
-    * { 
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box; 
-    }
-
-    html, body {
-        overflow-x: hidden; /* Verhindert horizontales Scrollen auf Mobilgeräten */
-        width: 100%;
-    }
-
-    body {
-        font-family: 'Space Grotesk', sans-serif;
-        color: var(--accent);
-        background-color: var(--primary);
-        line-height: 1.6;
-    }
-
-    .container-content {
-        width: 90%; /* Erhöht auf 90% für bessere Nutzung auf kleinen Screens */
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-
-    /* NAV FIX */
-    nav {
-        background-color: var(--secondary);
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .nav-flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-    .x-highlight { color: var(--highlight); }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { text-decoration: none; color: var(--accent); transition: 0.3s; font-size: 0.95rem; }
-    .nav-links a:hover { color: var(--highlight); }
-
-    /* LAYOUT & TYPO */
-    .py-20 { padding: 5rem 0; }
-    .py-16 { padding: 4rem 0; }
-    .mb-8 { margin-bottom: 2rem; }
-    .mb-12 { margin-bottom: 3rem; }
-    .text-center { text-align: center; }
-    .font-bold { font-weight: 700; }
-
-    .gradient-text {
-        background: linear-gradient(90deg, var(--highlight) 0%, var(--darkGreen) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-
-    /* HERO SECTION FIX */
-    .hero-flex {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-        flex-wrap: wrap; /* Erlaubt das Umbrechen auf Tablet */
-    }
-
-    .hero-text { 
-        flex: 1; 
-        min-width: 300px; /* Verhindert, dass der Text zu schmal wird */
-    }
-
-    .hero-image { 
-        flex: 1; 
-        display: flex; 
-        justify-content: center; 
-        min-width: 300px;
-    }
-
-    /* ANIMATION CONTAINER FIX */
-    .illustration-container {
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        aspect-ratio: 1 / 1; /* Moderner Ersatz für padding-bottom Hack */
-        background-color: #f0f4f8;
-        border-radius: 1rem;
-    }
-
-    .server-core {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        background-color: var(--darkGreen);
-        box-shadow: 0 0 20px rgba(44, 128, 83, 0.5);
-    }
-
-    .data-block {
-        position: absolute;
-        width: 20px; height: 20px;
-        background-color: var(--highlight);
-        border-radius: 6px;
-        animation: move-data 10s infinite linear;
-    }
-
-    @keyframes move-data {
-        0% { transform: translate(0, 0) scale(1); opacity: 1; }
-        25% { transform: translate(100px, -50px) scale(0.8); opacity: 0.8; }
-        50% { transform: translate(0, -100px) scale(0.6); opacity: 0.6; }
-        75% { transform: translate(-100px, -50px) scale(0.8); opacity: 0.8; }
-        100% { transform: translate(0, 0) scale(1); opacity: 1; }
-    }
-
-    /* GRID FIX */
-    .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-    }
-
-    .card-style {
-        background-color: var(--secondary);
-        padding: 2rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        height: 100%;
-    }
-
-    /* BUTTONS */
-    .btn-primary, .btn-outline {
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: 500;
-        display: inline-block;
-        transition: 0.3s;
-        text-align: center;
-    }
-    .btn-primary { background-color: var(--highlight); color: white; }
-    .btn-outline { border: 1px solid var(--highlight); color: var(--highlight); }
-
-    /* RESPONSIVE MEDIA QUERIES */
-
-    @media (max-width: 768px) {
-    #menu-toggle { display: block !important; } /* Zeigt den Hamburger */
-
-    .nav-links {
-        display: none; /* Standardmäßig aus auf Mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--secondary);
-        padding: 1.5rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        gap: 1.2rem;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex; /* Zeigt Menü wenn 'active' Klasse da ist */
-    }
-
-    .container-content { width: 92%; }
-    .hero-image { display: none; }
-}
-
-    /* TABLET & MOBILE */
-    @media (max-width: 992px) {
-        .hero-flex {
-            flex-direction: column;
-            text-align: center;
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #F5F5F5;
+            --secondary: #FFFFFF;
+            --accent: #2A2E35;
+            --highlight: #3CA66A;
+            --lightAccent: #4FB878;
+            --darkGreen: #2C8053;
+            --lightGrey: #E5E7EB;
         }
-        .hero-text h1 {
-            font-size: 2.2rem !important; /* Kleinerer Font für Tablet/Mobil */
-        }
-        .hero-image {
-            width: 100%;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-    }
 
-    @media (max-width: 768px) {
-        .nav-links { display: none; } /* Hamburger-Menü müsste hier gebaut werden, falls nötig */
-        .py-20 { padding: 3rem 0; }
-        .grid-3 {
-            grid-template-columns: 1fr; /* Stapelt Karten auf dem Handy */
-        }
-        .hero-image {
-            display: none; /* Versteckt die Animation auf kleinen Handys für Performance */
-        }
-        .prose h2 {
-            font-size: 1.8rem !important;
-        }
-    }
+        /* GLOBAL FIXES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { overflow-x: hidden; width: 100%; scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; color: var(--accent); background-color: var(--primary); line-height: 1.6; }
+        .container-content { width: 90%; margin: 0 auto; max-width: 1200px; }
 
-    .noscript-alert {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background-color: white; z-index: 1000; display: flex; 
-        flex-direction: column; align-items: center; justify-content: center;
-        text-align: center; padding: 20px;
-    }
-</style>
+        /* NAV STYLES */
+        nav { background-color: var(--secondary); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .x-highlight { color: var(--highlight); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--accent); transition: 0.3s; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--highlight); }
+
+        #menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--accent); outline: none; }
+
+        /* LAYOUT & TYPO */
+        .py-20 { padding: 5rem 0; }
+        .py-16 { padding: 4rem 0; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .text-center { text-align: center; }
+        .font-bold { font-weight: 700; }
+        .bg-secondary { background-color: var(--secondary); }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--highlight) 0%, var(--darkGreen) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* HERO SECTION */
+        .hero-flex { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-image { flex: 1; display: flex; justify-content: center; min-width: 300px; }
+
+        .illustration-container {
+            position: relative; width: 100%; max-width: 400px; aspect-ratio: 1 / 1;
+            background-color: #f0f4f8; border-radius: 1rem;
+        }
+        .server-core {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 120px; height: 120px; border-radius: 50%; background-color: var(--darkGreen);
+            box-shadow: 0 0 20px rgba(44, 128, 83, 0.5);
+        }
+        .data-block {
+            position: absolute; width: 20px; height: 20px; background-color: var(--highlight);
+            border-radius: 6px; animation: move-data 10s infinite linear;
+        }
+        @keyframes move-data {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            25% { transform: translate(100px, -50px) scale(0.8); opacity: 0.8; }
+            50% { transform: translate(0, -100px) scale(0.6); opacity: 0.6; }
+            75% { transform: translate(-100px, -50px) scale(0.8); opacity: 0.8; }
+            100% { transform: translate(0, 0) scale(1); opacity: 1; }
+        }
+
+        /* GRID & CARDS */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card-style { background-color: var(--secondary); padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%; }
+
+        .btn-primary, .btn-outline { padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; display: inline-block; transition: 0.3s; text-align: center; }
+        .btn-primary { background-color: var(--highlight); color: white; }
+        .btn-outline { border: 1px solid var(--highlight); color: var(--highlight); }
+
+        /* LEGAL SECTION STYLING */
+        .prose h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+        .prose h4 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; }
+        .prose ul { margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+
+        /* FOOTER FIX */
+        footer { padding: 4rem 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .footer-grid ul { list-style: none; }
+        .footer-grid a { text-decoration: none; color: var(--accent); opacity: 0.8; transition: 0.3s; }
+        .footer-grid a:hover { opacity: 1; color: var(--highlight); }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-flex { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 2.2rem !important; }
+            .hero-image { max-width: 350px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            #menu-toggle { display: block; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0;
+                width: 100%; background-color: var(--secondary); padding: 1.5rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); gap: 1.2rem; text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .hero-image { display: none; }
+            .py-20 { padding: 3rem 0; }
+        }
+
+        .noscript-alert { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+    </style>
 </head>
 <body>
 
     <noscript>
         <div class="noscript-alert">
             <p class="font-bold mb-2" style="font-size: 1.5rem;">JavaScript Disabled</p>
-            <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings to continue.</p>
+            <p>This website requires JavaScript to function properly.</p>
         </div>
     </noscript>
 
     <div id="app">
         <nav>
-    <div class="container-content nav-flex">
-        <a href="#" class="logo-text">Mini<span class="x-highlight">GreX</span></a>
-        
-        <button id="menu-toggle" aria-label="Menu" style="display: none; background: none; border: none; cursor: pointer; color: var(--accent);">
-            <i data-feather="menu"></i>
-        </button>
-
-        <div class="nav-links" id="nav-menu">
-            <a href="#overview">Overview</a>
-            <a href="#mission">Mission</a>
-            <a href="#services">Services</a>
-            <a href="#legal">Legal</a>
-            <a href="#join">Join Us</a>
-            <a href="https://github.com/MiniGreX" target="_blank" aria-label="GitHub">
-                <i data-feather="github" style="width: 1.5rem; height: 1.5rem;"></i>
-            </a>
-        </div>
-    </div>
-</nav>
+            <div class="container-content nav-flex">
+                <a href="#" class="logo-text">Mini<span class="x-highlight">GreX</span></a>
+                <button id="menu-toggle" aria-label="Menu">
+                    <i data-feather="menu"></i>
+                </button>
+                <div class="nav-links" id="nav-menu">
+                    <a href="#overview">Overview</a>
+                    <a href="#mission">Mission</a>
+                    <a href="#services">Services</a>
+                    <a href="#legal">Legal</a>
+                    <a href="#join">Join Us</a>
+                    <a href="https://github.com/MiniGreX" target="_blank">
+                        <i data-feather="github" style="width: 1.5rem; height: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
 
         <section id="home" class="py-20">
             <div class="container-content hero-flex">
@@ -282,9 +172,6 @@
                         <div class="data-block" style="top: 80%; left: 25%; animation-delay: -2s;"></div>
                         <div class="data-block" style="top: 50%; right: 10%; animation-delay: -4s;"></div>
                         <div class="data-block" style="bottom: 15%; left: 60%; animation-delay: -6s;"></div>
-                        <div class="data-block" style="top: 10%; right: 50%; animation-delay: -8s;"></div>
-                        <div class="data-block" style="top: 40%; left: 40%; animation-delay: -1s;"></div>
-                        <div class="data-block" style="top: 70%; right: 30%; animation-delay: -5s;"></div>
                     </div>
                 </div>
             </div>
@@ -295,21 +182,21 @@
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 700;">Mini<span class="x-highlight">GreX</span> Overview</h2>
                     <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                        Welcome to the **MiniGreX Organization**, a dedicated initiative to empower journalists and security professionals worldwide. Rooted in the principles of press freedom and supported by the democratic ideals of transparency and accountability, our organization strives to provide tools that safeguard freedom of expression in challenging environments.
+                        Welcome to the **MiniGreX Organization**, a dedicated initiative to empower journalists and security professionals worldwide. Rooted in the principles of press freedom and supported by the democratic ideals of transparency and accountability.
                     </p>
                 </div>
                 <div class="grid-3">
                     <div class="card-style text-center" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="mb-2 font-bold">Who We Are</h3>
-                        <p>MiniGreX is a collective of developers, security specialists, and advocates for press freedom. Together, we design and maintain tools that prioritize security, privacy, and ease of use.</p>
+                        <p>MiniGreX is a collective of developers, security specialists, and advocates for press freedom. Together, we design and maintain tools that prioritize security.</p>
                     </div>
                     <div class="card-style text-center" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="mb-2 font-bold">Membership Access</h3>
-                        <p>Access to this organization is restricted to vetted individuals who align with our mission. Applications are reviewed on a case-by-case basis to ensure that our resources are used ethically and responsibly.</p>
+                        <p>Access is restricted to vetted individuals. Applications are reviewed case-by-case to ensure resources are used ethically.</p>
                     </div>
                     <div class="card-style text-center" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="mb-2 font-bold">What We Offer</h3>
-                        <p>We offer secure infrastructure, collaborative development, and expertise sharing for those working at the intersection of journalism and security.</p>
+                        <p>We offer secure infrastructure, collaborative development, and expertise sharing for journalism and security.</p>
                     </div>
                 </div>
             </div>
@@ -346,8 +233,8 @@
                     </div>
                     <div class="hero-text" data-aos="fade-left">
                         <h2 class="mb-6 font-bold" style="font-size: 2rem;">ABOUT <span class="gradient-text">MINIGREX</span></h2>
-                        <p class="mb-4" style="opacity: 0.9;">MiniGreX is a collective of cybersecurity experts, developers, and journalists working together to create secure communication channels for high-risk environments.</p>
-                        <p class="mb-4" style="opacity: 0.9;">Our team operates under strict security protocols to ensure the integrity of our systems and the safety of our users.</p>
+                        <p class="mb-4">MiniGreX is a collective of cybersecurity experts, developers, and journalists creating secure channels for high-risk environments.</p>
+                        <p class="mb-4">Our team operates under strict security protocols to ensure the integrity of our systems.</p>
                         <a href="https://github.com/MiniGreX" target="_blank"><i data-feather="github"></i></a>
                     </div>
                 </div>
@@ -357,7 +244,7 @@
         <section id="services" class="py-16">
             <div class="container-content">
                 <h2 class="text-center mb-12 font-bold" style="font-size: 2rem;" data-aos="fade-up">OUR <span class="gradient-text">SERVICES</span></h2>
-                <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="grid-3">
                     <div class="card-style" data-aos="fade-up" data-aos-delay="100">
                         <i data-feather="mail" style="color: var(--highlight); margin-bottom: 1rem;"></i>
                         <h3 class="font-bold mb-2">Secure Email</h3>
@@ -397,51 +284,36 @@
                 <div class="card-style prose" data-aos="fade-up">
                     <h2 class="mb-6 font-bold" style="font-size: 2.5rem;">Legal <span class="gradient-text">Notice</span></h2>
                     <h3>1. Introduction</h3>
-                    <p>MiniGreX is a project built to support press freedom, secure communication, and the protection of fundamental rights worldwide. This project is rooted in the principles enshrined in **German law (Grundgesetz)** and international conventions such as the Universal Declaration of Human Rights. Misuse of this software for purposes contrary to these principles is strictly prohibited.</p>
+                    <p>MiniGreX is a project built to support press freedom and fundamental rights worldwide. This project is rooted in the principles enshrined in **German law (Grundgesetz)** and international conventions. Misuse is strictly prohibited.</p>
                     
                     <h3>2. Terms of Use</h3>
-                    <p>By using MiniGreX, you agree to the following:</p>
                     <h4>Allowed Use:</h4>
                     <ul>
-                        <li>Development of tools and systems that enhance security, protect freedom of expression, and support journalistic work.</li>
-                        <li>Usage by journalists, security professionals, and developers aligned with the project’s mission.</li>
+                        <li>Development of tools that enhance security and support journalistic work.</li>
+                        <li>Usage by professionals aligned with the project’s mission.</li>
                     </ul>
                     <h4>Prohibited Use:</h4>
                     <ul>
-                        <li>Exploitation of the software for illegal surveillance, suppression of information, or harm to individuals.</li>
-                        <li>Violation of human rights or actions that undermine press freedom.</li>
-                        <li>Any use that conflicts with the ethical and legal principles outlined in this document.</li>
+                        <li>Exploitation for illegal surveillance or harm to individuals.</li>
+                        <li>Violation of human rights or actions undermining press freedom.</li>
                     </ul>
-
+                    
                     <h3>3. Disclaimer of Liability</h3>
-                    <p>MiniGreX and its contributors are not liable for any damages, direct or indirect, resulting from the misuse of this software.</p>
-                    <p>Users assume full responsibility for ensuring their use of the software complies with local laws and international standards.</p>
-
+                    <p>MiniGreX and its contributors are not liable for any damages resulting from misuse. Users assume full responsibility.</p>
+                    
                     <h3>4. Consequences of Misuse</h3>
                     <ul>
-                        <li>Immediate termination of access to all MiniGreX resources.</li>
-                        <li>Reporting of violations to appropriate legal authorities.</li>
-                        <li>Civil or criminal prosecution under German and international laws.</li>
+                        <li>Immediate termination of access to all resources.</li>
+                        <li>Reporting to legal authorities.</li>
                     </ul>
-
-                    <h3>5. Jurisdiction and Legal Framework</h3>
+                    
+                    <h3>5. Jurisdiction</h3>
                     <ul>
-                        <li>MiniGreX operates under the jurisdiction of the Federal Republic of Germany.</li>
-                        <li>It adheres to the following legal frameworks:
-                            <ul>
-                                <li>**German Basic Law (Grundgesetz):** Articles 5 and 10 on press freedom and privacy.</li>
-                                <li>**European Convention on Human Rights:** Articles 8 and 10.</li>
-                                <li>**Universal Declaration of Human Rights:** Articles 19 and 21.</li>
-                            </ul>
-                        </li>
+                        <li>**German Basic Law (Grundgesetz):** Articles 5 and 10.</li>
+                        <li>**European Convention on Human Rights:** Articles 8 and 10.</li>
                     </ul>
-
-                    <h3>6. Reporting Violations</h3>
-                    <p>If you believe this software is being misused, please report the issue to our legal team via secure email.</p>
-
-                    <h3>7. Amendments</h3>
-                    <p>These terms may be updated periodically to reflect changes in legal standards or project goals. Users are encouraged to review these terms regularly.</p>
-                    <p style="margin-top: 2rem; font-weight: 500;">By using or contributing to MiniGreX, you acknowledge and agree to these terms. Together, we can ensure this project serves its purpose of protecting truth and empowering those who seek it.</p>
+                    
+                    <p style="margin-top: 2rem; font-weight: 500;">By using MiniGreX, you acknowledge and agree to these terms.</p>
                 </div>
             </div>
         </section>
@@ -449,8 +321,8 @@
         <section id="join" class="py-20 text-center">
             <div class="container-content" data-aos="zoom-in">
                 <h2 class="mb-6 font-bold" style="font-size: 2.5rem;">WE ARE <span class="gradient-text">LOOKING FOR</span></h2>
-                <p class="mb-8" style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;">Beta Testers with Security Skills. If you share our vision and are interested in contributing, please submit an application.</p>
-                <a href="mailto:minigrex@proton.me" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.125rem;">Secure Contact</a>
+                <p class="mb-8" style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto;">Beta Testers with Security Skills. If you share our vision, please submit an application.</p>
+                <a href="mailto:minigrex@proton.me" class="btn-primary" style="padding: 1rem 2.5rem;">Secure Contact</a>
             </div>
         </section>
 
@@ -459,12 +331,10 @@
                 <div class="footer-grid">
                     <div>
                         <div class="logo-text mb-4">Mini<span class="x-highlight">GreX</span></div>
-                        <p style="font-size: 0.875rem; opacity: 0.9;" class="mb-4">Secure infrastructure for press freedom</p>
-                        <h4 class="font-bold mb-2">Notice</h4>
-                        <p style="font-size: 0.875rem; opacity: 0.9;">Our services are for lawful purposes only. Always practice good operational security.</p>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">Secure infrastructure for press freedom.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold">Navigation</h4>
+                        <h4 class="font-bold mb-4">Navigation</h4>
                         <ul>
                             <li><a href="#home">Home</a></li>
                             <li><a href="#overview">Overview</a></li>
@@ -472,7 +342,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold">Links</h4>
+                        <h4 class="font-bold mb-4">Links</h4>
                         <ul>
                             <li><a href="#services">Services</a></li>
                             <li><a href="#legal">Legal</a></li>
@@ -480,7 +350,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold">Connect</h4>
+                        <h4 class="font-bold mb-4">Connect</h4>
                         <ul>
                             <li><a href="https://github.com/MiniGreX" target="_blank">GitHub</a></li>
                             <li><a href="mailto:minigrex@proton.me">Email</a></li>
@@ -497,6 +367,28 @@
     <script>
         AOS.init({ duration: 800, once: true });
         feather.replace();
+
+        const menuBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuBtn.querySelector('i').setAttribute('data-feather', 'menu');
+                feather.replace();
+            });
+        });
     </script>
 </body>
 </html>
